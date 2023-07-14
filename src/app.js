@@ -18,35 +18,6 @@ app.get("/", (req, res) => {
 });
 app.get("/weather", (req, res) => {
     res.render("weather")
-    
-    /*if (req.query.name==undefined){
-        res.render("weather",{searchMsg:"Get output here",temp:"0"})
-    }
-    
-    else{
-        requests(
-            `https://api.openweathermap.org/data/2.5/weather?q=${req.query.name}&appid=e37cf556cd6bc88480e005301b4f5792`
-          ).on("data", (chunkData) => {
-            
-              const objData = JSON.parse(chunkData);
-              const arrData = [objData];
-              //console.log((arrData[0].main.temp - 273.0).toFixed(2));
-              console.log(
-                `The temperature of ${arrData[0].name} is ${(
-                  arrData[0].main.temp - 273.00
-                ).toFixed(2)}${arrData[0].weather[0].main}`
-
-              );
-              res.render("weather", {
-                weatherStatus: arrData[0].weather[0].main,
-                temp: (arrData[0].main.temp - 273.0).toFixed(2),
-                searchMsg:arrData[0].name+", "+arrData[0].sys.country,
-                
-              });
-            
-          });
-    }*/
-  
 });
 app.get("/about", (req, res) => {
   res.render("about");
